@@ -1,2 +1,2 @@
-# FSD-projects
-Learning project for FSD
+# FSD-CV
+Учебный проект по верстке резюме с применением компонентного подхода и использованием препроцессоров: Pug (HTML), SCSS (CSS).
