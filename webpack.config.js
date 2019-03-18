@@ -25,25 +25,26 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    use: [
-                        {
-                            loader: "css-loader"
-                        },
-                        {
-                            loader: "sass-loader",
-                            options: {
-                                includePaths: ['node_modules/normalize-scss/sass'],
-                                data: `
-                                @import 'src/scss/scss-assets/_variables.scss';
-                                @import 'src/scss/scss-assets/_mixins.scss';
-                                @import 'src/scss/scss-assets/_functions.scss';
-                                @import 'src/scss/scss-assets/_config.scss';
-                                `
-                            }
+                use: [
+                    {
+                        loader: process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    },
+                    {
+                        loader: "css-loader"
+                    },
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            includePaths: ['node_modules/normalize-scss/sass'],
+                            data: `
+                                 @import './src/scss/scss-assets/_variables.scss';
+                                 @import './src/scss/scss-assets/_mixins.scss';
+                                 @import './src/scss/scss-assets/_functions.scss';
+                                 @import './src/scss/scss-assets/_config.scss';
+                                 `
                         }
-                    ]
-                })
+                    }
+                ]
             }
         ]
     },
