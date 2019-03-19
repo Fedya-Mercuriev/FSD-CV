@@ -41,7 +41,11 @@ module.exports = (env, argv) => {
                             }
                         }
                     ]
-                }
+                },
+                {
+                    test: /\.(ttf|eot|svg|woff2?)(\?v=[a-z0-9=\.]+)?$/i,
+                    loader: 'url-loader?limit=1024&name=fonts/[name].[ext]'
+                },
             ]
         },
         devtool: 'source-map',
