@@ -1,0 +1,9 @@
+@import "normalize/import-now";
+@import "typography";
+
+//@include font-face('MyriadPro Regular', '../fonts/Regular/MyriadPro-Regular', null, null, ttf eot woff2 woff svg);
+//@include font-face('MyriadPro Regular', '../fonts/Light SE/Myriad Light SemiExtended', null, null, ttf eot woff2 woff svg);
+
+h1 {
+  color: red;
+}
