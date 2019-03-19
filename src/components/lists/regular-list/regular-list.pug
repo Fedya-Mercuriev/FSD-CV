@@ -1,0 +1,7 @@
+mixin simplified-list(items)
+    ul.simplified-list
+        each item in items
+            li.simplified-list__list-item
+                div.list-item-block
+                    em.list-item-block__list-item-key=item.key + " "
+                    span.list-item-block__list-item-text=item.text
