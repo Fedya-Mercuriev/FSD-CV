@@ -1,0 +1,7 @@
+mixin dotted-progress-bar(skillsList)
+    each skill in skillsList
+        div.skill-block
+            h3.skill-block__skill-title=skill.title
+            div.skill-level-block
+                - for (var i = 0; i <= skill.level; i++)
+                    i.skill-level-block__level-unit *
