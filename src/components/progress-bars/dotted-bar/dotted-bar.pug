@@ -1,10 +1,12 @@
 mixin dotted-progress-bar(skillsList)
+    ul.skills-list
     each skill in skillsList
-        div.skill-block
-            h3.skill-block__skill-title=skill.title
-            div.skill-level-block(data-skill-level=skill.level)
-                - for (var i = 0; i <= 12; i++)
-                    if i > skill.level
-                        i.skill-level-block__level-unit *
-                    else
-                        i.skill-level-block__level-unit #
+        li.skills-list__list-item
+            div.skill-block-dotted
+                h3.skill-block-dotted__skill-title=skill.title
+                div.skill-block-dotted__skill-level-block(data-skill-level=skill.level)
+                    - for (var i = 0; i <= 12; i++)
+                        if i > skill.level
+                            i.skill-level-unit *
+                        else
+                            i.skill-level-unit #
