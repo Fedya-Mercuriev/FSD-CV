@@ -1,0 +1,7 @@
+mixin solid-progress-bar(skillsList)
+    ul.skill-list
+    each skill in skillsList
+        li.skill-list__list-item
+            div.skill-block-solid
+                h3.skill-block-solid__skill-title=skill.title
+                div.skill-block-solid__skill-level-block(data-skill-level=skill.level)
