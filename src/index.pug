@@ -1,9 +1,152 @@
+include ./components/block-wrapper/block-wrapper
+include ./components/text-block/text-block
+include ./components/lists/regular-list/regular-list
+include ./components/lists/advanced-list/advanced-list
+include ./components/progress-bars/dotted-bar/dotted-bar
+include ./components/progress-bars/solid-bar/solid-progress-bar
+
 doctype html
 html(lang="en")
     head
         meta(charset="utf-8")
-        link(rel="stylesheet" type="text/css" href="dist/common.css")
+        //- link(rel="stylesheet" type="text/css" href="dist/common.css")
     body
         div.container
-            h1 Привет мир
+            div.cv-intro-block
+                div.applicant-photo-wrapper
+                p.cv-intro-block__applicant-name="Name Here"
+                p.cv-intro-block__applicant-surname="Surname"
+                p.cv-intro-block__desired-position="Graphic Designer"
+            // Profile block
+            +block-wrapper("Profile")
+                +set-block("icon")
+                    include ./img/profile-icon.svg
+                +set-block("component")
+                    +text-block("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu", "pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.")
+
+
+            // Contacts block
+            +block-wrapper("Contact")
+                +set-block("icon")
+                    include ./img/phone-icon.svg
+                +set-block("component")
+                    +simplified-list([{
+                        key: "address",
+                        text: "Main Street, City"
+                    }, {
+                        key: "e-mail",
+                        text: "contact@domain.com"
+                    }, {
+                        key: "phone",
+                        text: "555-555-555"
+                    }, {
+                        key: "website",
+                        text: "www.yourweb.com"
+                    }])
+
+
+            //- Skills block
+            +block-wrapper("Skills")
+                +set-block("icon")
+                    include ./img/skills-icon.svg
+                +set-block("component")
+                    +dotted-progress-bar([
+                        {title: "Creative", level: 9},
+                        {title: "Teamwork", level: 11},
+                        {title: "Innovate", level: 6},
+                        {title: "Communication", level: 11}
+                        ])
+
+
+            // Education block
+            +block-wrapper("Education")
+                +set-block("icon")
+                    include ./img/education-icon.svg
+                +set-block("component")
+                    +advanced-list([
+                        {
+                            title: "Master-degree",
+                            date: "Feb 2011 - Jun 2014",
+                            university: "University Name",
+                            text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+                        },
+                        {
+                            title: "Master-degree",
+                            date: "Feb 2011 - Jun 2014",
+                            university: "University Name",
+                            text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+                        },
+                        {
+                            title: "Master-degree",
+                            date: "Feb 2011 - Jun 2014",
+                            university: "University Name",
+                            text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+                        },
+                        {
+                            title: "Master-degree",
+                            date: "Feb 2011 - Jun 2014",
+                            university: "University Name",
+                            text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+                        }
+                    ], true)
+
+
+
+
+            // Experience block
+            +block-wrapper("Experience")
+                +set-block("icon")
+                    include ./img/experience-icon.svg
+                +set-block("component")
+                    +advanced-list([
+                        {
+                            title: "Company Name",
+                            date: "Feb 2011 - Jun 2014",
+                            university: "Your job here",
+                            text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+                        },
+                        {
+                            title: "Company Name",
+                            date: "Feb 2011 - Jun 2014",
+                            university: "Your job here",
+                            text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+                        },
+                        {
+                            title: "Company Name",
+                            date: "Feb 2011 - Jun 2014",
+                            university: "Your job here",
+                            text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+                        }
+                    ])
+
+            +block-wrapper("Software")
+                +set-block("icon")
+                    include ./img/software-icon.svg
+                +set-block("component")
+                    +solid-progress-bar([
+                        {
+                            title: "Photoshop",
+                            level: 90
+                        },
+                        {
+                            title: "Dreamweaver",
+                            level: 80
+                        },
+                        {
+                            title: "Illustrator",
+                            level: 70
+                        },
+                        {
+                            title: "After Effects",
+                            level: 60
+                        },
+                        {
+                            title: "InDesign",
+                            level: 60
+                        },
+                        {
+                            title: "HTML&CSS3",
+                            level: 90
+                        }
+                        ])
         script(src="dist/build.js")
