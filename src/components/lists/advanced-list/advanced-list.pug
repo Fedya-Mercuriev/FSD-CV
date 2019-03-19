@@ -1,0 +1,9 @@
+mixin advanced-list(data, isColourful=false)
+    ul.advanced-list(class = isColourful === true ? "is-colourful" : "")
+        each item in data
+            li.advanced-list__list-item
+                div.advanced-list-item-block
+                    h3.advanced-list-item-block__block-title= item.title
+                    em.advanced-list-item-block__date= "//" + item.date
+                    p.university-name= item.university
+                    p.advanced-list-item-block__text-content=item.text
