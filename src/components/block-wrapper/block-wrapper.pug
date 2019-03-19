@@ -1,0 +1,22 @@
+- blocks = {};
+
+mixin block-wrapper(title, icon, component)
+    block
+    div.cv-block
+        header.block-header
+            div.block-icon
+                if blocks['icon']
+                    - blocks['icon']()
+                else
+                    // Do nothing
+            h2.block-headline= title
+        div.block-content
+            if blocks['component']
+                - blocks['component']()
+            else
+                // Do thing
+    +set-block("icon")
+    +set-block("component")
+
+mixin set-block(key)
+    - blocks[key] = this.block
