@@ -4,12 +4,12 @@ mixin block-wrapper(title)
     block
     div.cv-block
         header.block-header
-            div.block-icon
+            div.block-header__block-icon
                 if blocks['icon']
                     - blocks['icon']()
                 else
                     // Do nothing
-            h2.block-headline= title
+            h2.block-header__block-headline= title
         div.block-content
             if blocks['component']
                 - blocks['component']()
