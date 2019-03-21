@@ -1,9 +1,18 @@
 @import "normalize/import-now";
 @import "typography";
+@import "../components/block-wrapper/block-wrapper.scss";
 
-//@include font-face('MyriadPro Regular', '../fonts/Regular/MyriadPro-Regular', null, null, ttf eot woff2 woff svg);
-//@include font-face('MyriadPro Regular', '../fonts/Light SE/Myriad Light SemiExtended', null, null, ttf eot woff2 woff svg);
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 
-h1 {
-  color: red;
+.column-1 {
+  width: 100%;
+}
+
+.column-2 {
+  width: 100%;
 }
