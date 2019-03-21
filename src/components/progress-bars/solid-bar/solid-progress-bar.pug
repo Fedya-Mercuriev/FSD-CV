@@ -1,7 +1,8 @@
-mixin solid-progress-bar(skillsList)
+mixin solid-progress-bar(itemsList, blockClassName)
     ul.skill-list
-    each skill in skillsList
-        li.skill-list__list-item
-            div.skill-block-solid
-                h3.skill-block-solid__skill-title=skill.title
-                div.skill-block-solid__skill-level-block(data-skill-level=skill.level)
+        each item in itemsList
+            li(class=`${blockClassName}-list__list-item`)
+                div(class=`${blockClassName}-block-solid`)
+                    h3(class=`${blockClassName}-block-solid__${blockClassName}-title`)=item.title
+                    div(class=`${blockClassName}-block-solid__${blockClassName}-level-block`
+                    data-item-level=item.level)
