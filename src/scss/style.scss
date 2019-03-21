@@ -2,11 +2,17 @@
 @import "typography";
 @import "../components/block-wrapper/block-wrapper.scss";
 
+html {
+  font-size: $base-font-size;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  min-width: 320px;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .column-1 {
