@@ -1,2 +1,105 @@
 @import "normalize/import-now";
 @import "typography";
+@import "../components/block-wrapper/block-wrapper.scss";
+
+html {
+  font-size: $base-font-size;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+  max-width: 1920px;
+  padding: 24px 0 24px 0;
+  margin: 0 auto;
+
+  @include media(map-deep-get($devices, "tablet")) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 19.951632406287787%;
+
+  @include media(map-deep-get($devices, "tablet")) {
+    order: 1;
+    width: 100%;
+  }
+
+  &__applicant-name {
+    @include reset-pad-marg();
+    margin-top: 9.068923821039903%;
+    font-size: 2.06em;
+    font-family: "MyriadPro Light SE", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  &__applicant-surname {
+    @include reset-pad-marg();
+    margin-top: 3.143893591293833%;
+    font-size: 2.7866666875em;
+    font-family: "MyriadPro", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__desired-position {
+    @include reset-pad-marg();
+    margin-top: 5.441354292623942%;
+    font-size: 0.9991666875em;
+    font-family: "MyriadPro", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+.applicant-photo-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  width: 56%;
+  padding: 6.021505376344086%;
+  border: 1px solid $base-color;
+  @include vendor-prefix(border-radius, 50%);
+
+  &::after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  &__applicant-photo {
+    width: 100%;
+    @include vendor-prefix(border-radius, 50%);
+    background-color: $base-color;
+  }
+}
+
+.column-1 {
+  width: 100%;
+
+  @include media(map-deep-get($devices, "tablet")) {
+    order: 2;
+    width: 45%;
+  }
+}
+
+.column-2 {
+  width: 100%;
+
+  @include media(map-deep-get($devices, "tablet")) {
+    order: 3;
+    width: 45%;
+  }
+}

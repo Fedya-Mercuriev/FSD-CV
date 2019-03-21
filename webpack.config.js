@@ -44,7 +44,15 @@ module.exports = (env, argv) => {
                 },
                 {
                     test: /\.(ttf|eot|svg|woff2?)(\?v=[a-z0-9=\.]+)?$/i,
-                    loader: 'url-loader?limit=1024&name=fonts/[name].[ext]'
+                    use: [
+                        {
+                            loader: 'url-loader',
+                            options: {
+                                limit: 1024,
+                                name: 'assets/[hash].[ext]'
+                            }
+                        }
+                    ]
                 },
             ]
         },
