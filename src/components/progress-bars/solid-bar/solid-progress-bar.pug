@@ -1,5 +1,5 @@
 mixin solid-progress-bar(itemsList, blockClassName)
-    ul.skill-list
+    ul(class=`${blockClassName}-list`)
         each item in itemsList
             li(class=`${blockClassName}-list__list-item`)
                 div(class=`${blockClassName}-block-solid`)

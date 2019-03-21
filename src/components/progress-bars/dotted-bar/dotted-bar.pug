@@ -1,12 +1,13 @@
-mixin dotted-progress-bar(skillsList)
-    ul.skills-list
-    each skill in skillsList
-        li.skills-list__list-item
-            div.skill-block-dotted
-                h3.skill-block-dotted__skill-title=skill.title
-                div.skill-block-dotted__skill-level-block(data-skill-level=skill.level)
-                    - for (var i = 0; i <= 12; i++)
-                        if i > skill.level
-                            i.skill-level-unit *
-                        else
-                            i.skill-level-unit #
+mixin dotted-progress-bar(itemList, blockClassName)
+    ul(class=`${blockClassName}-list`)
+        each item in itemList
+            li(class=`${blockClassName}-list__list-item`)
+                div(class=`${blockClassName}-block-dotted`)
+                    h3(class=`${blockClassName}-block-dotted__${blockClassName}-title`)=item.title
+                    div(class=`${blockClassName}-block-dotted__${blockClassName}-level-block`
+                    data-item-level=item.level)
+                        - for (var i = 0; i <= 12; i++)
+                            if i > item.level
+                                i(class=`${blockClassName}-level-unit`) *
+                            else
+                                i(class=`${blockClassName}-level-unit`) #
