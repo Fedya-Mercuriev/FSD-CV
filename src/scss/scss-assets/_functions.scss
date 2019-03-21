@@ -18,3 +18,7 @@
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}

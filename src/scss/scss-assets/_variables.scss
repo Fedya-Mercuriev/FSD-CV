@@ -1,2 +1,13 @@
+// These variables are used in calculating fluid typography
+$browser-context: 16;
+$min-mobile-width: 320px;
+$max-mobile-width: 767px;
+$min-tablet-width: 768px;
+$max-tablet-width: 1023px;
+$min-pc-width: 1024px;
+$max-pc-width: 1439px;
+$min-large-pc-width: 1440px;
+$max-large-pc-width: 1890px;
+
 $base-font-family: "MyriadPro Regular", sans-serif;
-$block-wrapper-title-color: #3d6cb0;
+$base-color: #3d6cb0;
