@@ -12,7 +12,9 @@ html {
   flex-direction: column;
   align-items: center;
   min-width: 320px;
+  max-width: 2480px;
   padding: 6.129032258064516% 4.758064516129032%;
+  margin: 0 auto;
 
   @include media(map-deep-get($devices, "tablet")) {
     flex-direction: row;
@@ -24,7 +26,7 @@ html {
   @include media(map-deep-get($devices, "desktop")) {
     display: grid;
     grid-template-columns: [col-1-start]36.853832442067736%[col-gap]56.372549019607843%[col-2-end];
-    grid-template-rows: [row-1-start]auto[row-1-end] auto[row-2-end];
+    grid-template-rows: [row-1-start] max-content [row-1-end] 1fr [row-2-end];
   }
 }
 
