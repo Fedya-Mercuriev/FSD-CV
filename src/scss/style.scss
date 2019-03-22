@@ -13,7 +13,7 @@ html {
   align-items: center;
   min-width: 320px;
   max-width: 2480px;
-  padding: 6.129032258064516% 4.758064516129032%;
+  padding: 6.129032258064516% 4.637096774193548% 6.129032258064516% 4.919354838709677%;
   margin: 0 auto;
 
   @include media(map-deep-get($devices, "tablet")) {
@@ -25,8 +25,9 @@ html {
 
   @include media(map-deep-get($devices, "desktop")) {
     display: grid;
-    grid-template-columns: [col-1-start]36.853832442067736%[col-gap]56.372549019607843%[col-2-end];
+    grid-template-columns: [col-1-start] 36.9% [col-gap] 56.2% [col-2-end];
     grid-template-rows: [row-1-start] max-content [row-1-end] 1fr [row-2-end];
+    grid-column-gap: 6.9%;
   }
 }
 
@@ -35,6 +36,7 @@ html {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  padding-top: 2.902055622732769%;
   margin-bottom: 7.352941176470588%;
 
   @include media(map-deep-get($devices, "tablet")) {
@@ -50,39 +52,55 @@ html {
 
   &__applicant-name {
     @include reset-pad-marg();
-    margin-top: 9.068923821039903%;
-    font-size: 2.06em;
+    margin-top: 7.2%;
+    //font-size: 104px;
     font-family: "MyriadPro Light SE", sans-serif;
     font-weight: 400;
     text-transform: uppercase;
     color: #000000;
+
+    @include media(map-deep-get($devices, "desktop")) {
+      $min_font_size: 38px;
+      @include fluid-type(map-deep-get($devices, "desktop"), 2048px, $min_font_size, 104px);
+    }
   }
 
   &__applicant-surname {
     @include reset-pad-marg();
-    margin-top: 3.143893591293833%;
-    font-size: 2.7866666875em;
-    font-family: "MyriadPro", sans-serif;
+    margin-top: -20px;
+    font-size: 123px;
+    font-family: "MyriadPro Regular", sans-serif;
     font-weight: 700;
+    letter-spacing: 0;
     text-transform: uppercase;
+
+    @include media(map-deep-get($devices, "desktop")) {
+      $min_font_size: 57px;
+      @include fluid-type(map-deep-get($devices, "desktop"), 2048px, $min_font_size, 123px);
+    }
+
+    @include media(map-deep-get($devices, "desktop-l") + 1px) {
+      letter-spacing: 6px;
+    }
   }
 
   &__desired-position {
     @include reset-pad-marg();
-    margin-top: 5.441354292623942%;
-    font-size: 0.9991666875em;
-    font-family: "MyriadPro", sans-serif;
+    font-size: 50px;
+    letter-spacing: 1px;
+    font-family: "MyriadPro Regular", sans-serif;
     font-weight: 700;
     text-transform: uppercase;
   }
 }
 
 .applicant-photo-wrapper {
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   justify-content: stretch;
-  width: 56%;
-  padding: 6.021505376344086%;
+  width: 56.2273276904474%;
+  padding: 3.264812575574365%;
   border: 1px solid $base-color;
   @include vendor-prefix(border-radius, 50%);
 
