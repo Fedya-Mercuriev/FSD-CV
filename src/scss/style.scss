@@ -7,12 +7,12 @@ html {
 }
 
 .container {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-width: 320px;
-  max-width: 1920px;
-  padding: 24px 0 24px 0;
+  padding: 6.129032258064516% 4.758064516129032%;
   margin: 0 auto;
 
   @include media(map-deep-get($devices, "tablet")) {
@@ -21,6 +21,10 @@ html {
     justify-content: space-around;
     align-items: flex-start;
   }
+
+  @include media(map-deep-get($devices, "desktop")) {
+    justify-content: space-between;
+  }
 }
 
 .page-header {
@@ -28,11 +32,14 @@ html {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-bottom: 19.951632406287787%;
+  margin-bottom: 7.352941176470588%;
 
   @include media(map-deep-get($devices, "tablet")) {
     order: 1;
-    width: 100%;
+  }
+
+  @include media(map-deep-get($devices, "desktop")) {
+    width: 36.853832442067736%;
   }
 
   &__applicant-name {
@@ -93,6 +100,10 @@ html {
     order: 2;
     width: 45%;
   }
+
+  @include media(map-deep-get($devices, "desktop")) {
+    width: 36.853832442067736%;
+  }
 }
 
 .column-2 {
@@ -101,5 +112,9 @@ html {
   @include media(map-deep-get($devices, "tablet")) {
     order: 3;
     width: 45%;
+  }
+
+  @include media(map-deep-get($devices, "desktop")) {
+    width: 56.372549019607843%;
   }
 }
