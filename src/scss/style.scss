@@ -51,28 +51,49 @@ html {
   }
 
   &__applicant-name {
+    $min_font_size: 25px;
+    $max_font_size: 36px;
+
     @include reset-pad-marg();
     margin-top: 7.2%;
-    //font-size: 104px;
+    @include fluid-type(map-deep-get($devices, "mobile-s"), map-deep-get($devices, "mobile-l"), $min_font_size, $max_font_size);
     font-family: "MyriadPro Light SE", sans-serif;
     font-weight: 400;
     text-transform: uppercase;
     color: #000000;
 
+    @include media(map-deep-get($devices, "mobile-l")) {
+      $min_font_size: 36px;
+      $max_font_size: 57px;
+
+      @include fluid-type(map-deep-get($devices, "mobile-l"), map-deep-get($devices, "tablet"), $min_font_size, $max_font_size);
+    }
+
     @include media(map-deep-get($devices, "desktop")) {
       $min_font_size: 38px;
-      @include fluid-type(map-deep-get($devices, "desktop"), 2048px, $min_font_size, 104px);
+      $max_font_size: 104px;
+      @include fluid-type(map-deep-get($devices, "desktop"), 2048px, $min_font_size, $max_font_size);
     }
   }
 
   &__applicant-surname {
+    $min_font_size: 36px;
+    $max_font_size: 47px;
+
     @include reset-pad-marg();
-    margin-top: -20px;
-    font-size: 123px;
+    //font-size: 123px;
+    @include fluid-type(map-deep-get($devices, "mobile-s"), map-deep-get($devices, "mobile-l"), $min_font_size, $max_font_size);
     font-family: "MyriadPro Regular", sans-serif;
     font-weight: 700;
     letter-spacing: 0;
     text-transform: uppercase;
+
+    @include media(map-deep-get($devices, "mobile-l")) {
+      $min_font_size: 50px;
+      $max_font_size: 77px;
+
+      @include fluid-type(map-deep-get($devices, "mobile-l"), map-deep-get($devices, "tablet"), $min_font_size, $max_font_size);
+    }
 
     @include media(map-deep-get($devices, "desktop")) {
       $min_font_size: 57px;
@@ -80,17 +101,34 @@ html {
     }
 
     @include media(map-deep-get($devices, "desktop-l") + 1px) {
+      margin-top: -20px;
       letter-spacing: 6px;
     }
   }
 
   &__desired-position {
+    $min_font_size: 13px;
+    $max_font_size: 18px;
+
     @include reset-pad-marg();
-    font-size: 50px;
+    @include fluid-type(map-deep-get($devices, "mobile-s"), map-deep-get($devices, "mobile-l"), $min_font_size, $max_font_size);
     letter-spacing: 1px;
     font-family: "MyriadPro Regular", sans-serif;
     font-weight: 700;
     text-transform: uppercase;
+
+    @include media(map-deep-get($devices, "mobile-l")) {
+      $min_font_size: 17px;
+      $max_font_size: 25px;
+
+      @include fluid-type(map-deep-get($devices, "mobile-l"), map-deep-get($devices, "tablet"), $min_font_size, $max_font_size);
+    }
+
+    @include media(map-deep-get($devices, "desktop")) {
+      $min_font_size: 17px;
+      $max_font_size: 50px;
+      @include fluid-type(map-deep-get($devices, "desktop"), 2048px, $min_font_size, $max_font_size);
+    }
   }
 }
 
