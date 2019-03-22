@@ -37,7 +37,7 @@ html {
   align-items: center;
   width: 100%;
   padding-top: 2.902055622732769%;
-  margin-bottom: 7.352941176470588%;
+  margin-bottom: 17.352941%;
 
   @include media(map-deep-get($devices, "tablet")) {
     order: 1;
