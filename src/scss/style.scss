@@ -13,7 +13,6 @@ html {
   align-items: center;
   min-width: 320px;
   padding: 6.129032258064516% 4.758064516129032%;
-  margin: 0 auto;
 
   @include media(map-deep-get($devices, "tablet")) {
     flex-direction: row;
@@ -23,7 +22,9 @@ html {
   }
 
   @include media(map-deep-get($devices, "desktop")) {
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: [col-1-start]36.853832442067736%[col-gap]56.372549019607843%[col-2-end];
+    grid-template-rows: [row-1-start]auto[row-1-end] auto[row-2-end];
   }
 }
 
@@ -39,7 +40,10 @@ html {
   }
 
   @include media(map-deep-get($devices, "desktop")) {
-    width: 36.853832442067736%;
+    grid-column-start: col-1-start;
+    grid-column-end: col-gap;
+    grid-row-start: row-1-start;
+    grid-row-end: row-1-end;
   }
 
   &__applicant-name {
@@ -102,7 +106,11 @@ html {
   }
 
   @include media(map-deep-get($devices, "desktop")) {
-    width: 36.853832442067736%;
+    grid-column-start: col-1-start;
+    grid-column-end: col-gap;
+    grid-row-start: row-1-end;
+    grid-row-end: row-2-end;
+    width: 100%;
   }
 }
 
@@ -115,6 +123,10 @@ html {
   }
 
   @include media(map-deep-get($devices, "desktop")) {
-    width: 56.372549019607843%;
+    grid-column-start: col-gap;
+    grid-column-end: col-2-end;
+    grid-row-start: row-1-start;
+    grid-row-end: row-2-end;
+    width: 100%;
   }
 }
