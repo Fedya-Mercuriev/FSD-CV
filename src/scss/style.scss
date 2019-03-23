@@ -1,6 +1,9 @@
 @import "normalize/import-now";
 @import "typography";
 @import "../components/block-wrapper/block-wrapper.scss";
+@import "../components/text-block/text-block-scss";
+
+$base-font-family: "MyriadPro Regular", sans-serif;
 
 html {
   font-size: $base-font-size;
