@@ -1,4 +1,5 @@
 .cv-block {
+  margin-bottom: 50px;
 
   &:last-child {
     margin-bottom: 0;
@@ -43,7 +44,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
     @include reset-pad-marg();
     margin-top: 0.8em;
     text-transform: uppercase;
@@ -55,6 +55,7 @@
     }
 
     @include media(map-deep-get($devices, "desktop") + 1px) {
+      width: 100%;
       font-size: 52px;
 
       &::after {
