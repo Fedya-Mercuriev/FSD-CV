@@ -1,0 +1,88 @@
+.cv-block {
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @include media(map-deep-get($devices, "desktop")) {
+    margin-bottom: 105px;
+  }
+
+}
+
+.block-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+
+  @include media(map-deep-get($devices, "tablet")) {
+    flex-direction: row;
+  }
+
+  @include media(map-deep-get($devices, "desktop-l")) {
+    margin-bottom: 28px;
+  }
+
+  &__block-icon {
+    width: 83px;
+
+    @include media(map-deep-get($devices, "desktop")) {
+      width: 103px;
+    }
+
+    //@include media(map-deep-get($devices, "desktop-l")) {
+    //  margin-bottom: 64px;
+    //}
+
+    @include media(map-deep-get($devices, "desktop-l")) {
+      width: 187px;
+    }
+  }
+
+  &__block-headline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    @include reset-pad-marg();
+    margin-top: 0.8em;
+    text-transform: uppercase;
+    color: $base-color;
+
+    @include media(map-deep-get($devices, "tablet")) {
+      margin: 0 0 0 2.802055622732769%;
+      letter-spacing: 3px;
+    }
+
+    @include media(map-deep-get($devices, "desktop") + 1px) {
+      font-size: 52px;
+
+      &::after {
+        content: '';
+        flex-grow: 2;
+        flex-shrink: 2;
+        display: block;
+        width: 100%;
+        height: 10px;
+        margin-top: -9px;
+        margin-left: 15px;
+        background-color: $base-color;
+      }
+    }
+
+    @include media(map-deep-get($devices, "desktop-l") + 1px) {
+      $min_font_size: 52px;
+      $max_font_size: 82px;
+
+      margin-top: 0.5%;
+      @include fluid-type(map-deep-get($devices, "desktop-l"), 2048px, $min_font_size, $max_font_size);
+      //font-size: 82px;
+    }
+  }
+}
+
+.block-content {
+  width: 100%;
+}
+
+
