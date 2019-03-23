@@ -1,9 +1,13 @@
 .cv-block {
   margin-bottom: 50px;
 
-  &:last-child {
-    margin-bottom: 0;
+  @include media(map-deep-get($devices, "tablet")) {
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
+
   @include media(map-deep-get($devices, "desktop")) {
     margin-bottom: 85px;
   }
