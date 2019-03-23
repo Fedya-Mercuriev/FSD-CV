@@ -3,6 +3,6 @@ mixin solid-progress-bar(itemsList, blockClassName)
         each item in itemsList
             li(class=`${blockClassName}-list__list-item`)
                 div(class=`${blockClassName}-block-solid`)
-                    h3(class=`${blockClassName}-block-solid__${blockClassName}-title`)=item.title
+                    h3(class=`${blockClassName}-block-solid__block-title`)=item.title
                     div(class=`${blockClassName}-block-solid__${blockClassName}-level-block`
-                    data-item-level=item.level)
+                    data-skill-level-solid=item.level)
