@@ -1,6 +1,6 @@
 include ./components/block-wrapper/block-wrapper
 include ./components/text-block/text-block
-include ./components/lists/regular-list/regular-list
+include components/lists/simplified-list/simplified-list
 include ./components/lists/advanced-list/advanced-list
 include ./components/progress-bars/dotted-bar/dotted-bar
 include ./components/progress-bars/solid-bar/solid-progress-bar
@@ -36,7 +36,7 @@ html(lang="en")
                     +set-block("component")
                         +simplified-list([{
                             key: "address",
-                            text: "Main Street, City"
+                            text: "Main Street, City."
                         }, {
                             key: "e-mail",
                             text: "contact@domain.com"
