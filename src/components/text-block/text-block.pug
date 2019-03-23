@@ -1,4 +1,4 @@
 mixin text-block(text, highlightText)
-    p.block-text-content=text
+    p.block-text-content!= text
         if highlightText
-            b.block-text-content__bold-text=highlightText
+            b.block-text-content__bold-text!= highlightText
