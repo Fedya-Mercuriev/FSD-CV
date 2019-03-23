@@ -1,0 +1,100 @@
+.general-skill-list {
+  @include reset-pad-marg();
+  list-style-type: none;
+
+  &__list-item {
+    padding-top: 2%;
+    margin-bottom: 3.4%;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.general-skill-block-dotted {
+  text-align: center;
+  padding: 0 10.761789600967352%;
+
+  &__general-skill-title {
+
+    @include reset-pad-marg();
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: $text-color;
+    text-transform: uppercase;
+
+    @include media(map-deep-get($devices, "tablet")) {
+      $min_font_size: 21px;
+      $max_font_size: 31px;
+
+      @include fluid-type(map-deep-get($devices, "tablet"), map-deep-get($devices, "desktop"), $min_font_size, $max_font_size);
+    }
+
+    @include media(map-deep-get($devices, "desktop")) {
+      $min_font_size: 31px;
+      $max_font_size: 41px;
+
+      @include fluid-type(map-deep-get($devices, "desktop"), map-deep-get($devices, "desktop-l"), $min_font_size, $max_font_size);
+    }
+
+    @include media(map-deep-get($devices, "desktop-l")) {
+      $min_font_size: 41px;
+      $max_font_size: 51px;
+
+      @include fluid-type(map-deep-get($devices, "desktop-l"), 2048px, $min_font_size, $max_font_size);
+    }
+  }
+
+  &__general-skill-level-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.general-skill-level-unit {
+  border-radius: 50%;
+  background-color: #e6e6e6;
+  text-indent: -9999px;
+  width: 15px;
+  height: 15px;
+
+  @include media(map-deep-get($devices, "mobile-m")) {
+    width: 17px;
+    height: 17px;
+  }
+
+  @include media(map-deep-get($devices, "mobile-l")) {
+    width: 20px;
+    height: 20px;
+  }
+
+  @include media(map-deep-get($devices, "tablet")) {
+    width: 17px;
+    height: 17px;
+  }
+
+  @include media(map-deep-get($devices, "desktop")) {
+    width: 20px;
+    height: 20px;
+  }
+
+  @include media(map-deep-get($devices, "desktop-l")) {
+    width: 27px;
+    height: 27px;
+  }
+
+  @include media(map-deep-get($devices, "desktop-l") + 560px) {
+    width: 37px;
+    height: 37px;
+  }
+}
+
+@for $i from 1 through 12 {
+  [data-item-level="#{$i}"] .general-skill-level-unit {
+    &:nth-child(-n + #{$i}) {
+      background-color: $base-color;
+    }
+  }
+}
