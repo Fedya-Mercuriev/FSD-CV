@@ -1,18 +1,26 @@
 @import "normalize/import-now";
 @import "typography";
 @import "../components/block-wrapper/block-wrapper.scss";
+@import "../components/text-block/text-block";
+@import "../components/lists/simplified-list/simplified-list";
+@import "../components/lists/advanced-list/advanced-list";
+@import "../components/progress-bars/dotted-bar/dotted-bar";
+@import "../components/progress-bars/solid-bar/solid-bar";
+
+$base-font-family: "MyriadPro Regular", sans-serif;
 
 html {
   font-size: $base-font-size;
 }
 
 .container {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-width: 320px;
-  max-width: 1920px;
-  padding: 24px 0 24px 0;
+  max-width: 2480px;
+  padding: 6.129032258064516% 4.637096774193548% 6.129032258064516% 4.919354838709677%;
   margin: 0 auto;
 
   @include media(map-deep-get($devices, "tablet")) {
@@ -21,6 +29,13 @@ html {
     justify-content: space-around;
     align-items: flex-start;
   }
+
+  @include media(map-deep-get($devices, "desktop")) {
+    display: grid;
+    grid-template-columns: [col-1-start] 36.9% [col-gap] 56.2% [col-2-end];
+    grid-template-rows: [row-1-start] max-content [row-1-end] 1fr [row-2-end];
+    grid-column-gap: 6.9%;
+  }
 }
 
 .page-header {
@@ -28,48 +43,109 @@ html {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-bottom: 19.951632406287787%;
+  padding-top: 2.902055622732769%;
+  margin-bottom: 17.352941%;
 
   @include media(map-deep-get($devices, "tablet")) {
     order: 1;
-    width: 100%;
+  }
+
+  @include media(map-deep-get($devices, "desktop")) {
+    grid-column-start: col-1-start;
+    grid-column-end: col-gap;
+    grid-row-start: row-1-start;
+    grid-row-end: row-1-end;
   }
 
   &__applicant-name {
+    $min_font_size: 25px;
+    $max_font_size: 36px;
+
     @include reset-pad-marg();
-    margin-top: 9.068923821039903%;
-    font-size: 2.06em;
+    margin-top: 7.2%;
+    @include fluid-type(map-deep-get($devices, "mobile-s"), map-deep-get($devices, "mobile-l"), $min_font_size, $max_font_size);
     font-family: "MyriadPro Light SE", sans-serif;
     font-weight: 400;
     text-transform: uppercase;
     color: #000000;
+
+    @include media(map-deep-get($devices, "mobile-l")) {
+      $min_font_size: 36px;
+      $max_font_size: 57px;
+
+      @include fluid-type(map-deep-get($devices, "mobile-l"), map-deep-get($devices, "tablet"), $min_font_size, $max_font_size);
+    }
+
+    @include media(map-deep-get($devices, "desktop")) {
+      $min_font_size: 38px;
+      $max_font_size: 104px;
+      @include fluid-type(map-deep-get($devices, "desktop"), 2048px, $min_font_size, $max_font_size);
+    }
   }
 
   &__applicant-surname {
+    $min_font_size: 36px;
+    $max_font_size: 47px;
+
     @include reset-pad-marg();
-    margin-top: 3.143893591293833%;
-    font-size: 2.7866666875em;
-    font-family: "MyriadPro", sans-serif;
+    //font-size: 123px;
+    @include fluid-type(map-deep-get($devices, "mobile-s"), map-deep-get($devices, "mobile-l"), $min_font_size, $max_font_size);
+    font-family: "MyriadPro Regular", sans-serif;
     font-weight: 700;
+    letter-spacing: 0;
     text-transform: uppercase;
+
+    @include media(map-deep-get($devices, "mobile-l")) {
+      $min_font_size: 50px;
+      $max_font_size: 77px;
+
+      @include fluid-type(map-deep-get($devices, "mobile-l"), map-deep-get($devices, "tablet"), $min_font_size, $max_font_size);
+    }
+
+    @include media(map-deep-get($devices, "desktop")) {
+      $min_font_size: 57px;
+      @include fluid-type(map-deep-get($devices, "desktop"), 2048px, $min_font_size, 123px);
+    }
+
+    @include media(map-deep-get($devices, "desktop-l") + 1px) {
+      margin-top: -20px;
+      letter-spacing: 6px;
+    }
   }
 
   &__desired-position {
+    $min_font_size: 13px;
+    $max_font_size: 18px;
+
     @include reset-pad-marg();
-    margin-top: 5.441354292623942%;
-    font-size: 0.9991666875em;
-    font-family: "MyriadPro", sans-serif;
+    @include fluid-type(map-deep-get($devices, "mobile-s"), map-deep-get($devices, "mobile-l"), $min_font_size, $max_font_size);
+    letter-spacing: 1px;
+    font-family: "MyriadPro Regular", sans-serif;
     font-weight: 700;
     text-transform: uppercase;
+
+    @include media(map-deep-get($devices, "mobile-l")) {
+      $min_font_size: 17px;
+      $max_font_size: 25px;
+
+      @include fluid-type(map-deep-get($devices, "mobile-l"), map-deep-get($devices, "tablet"), $min_font_size, $max_font_size);
+    }
+
+    @include media(map-deep-get($devices, "desktop")) {
+      $min_font_size: 17px;
+      $max_font_size: 50px;
+      @include fluid-type(map-deep-get($devices, "desktop"), 2048px, $min_font_size, $max_font_size);
+    }
   }
 }
 
 .applicant-photo-wrapper {
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   justify-content: stretch;
-  width: 56%;
-  padding: 6.021505376344086%;
+  width: 56.2273276904474%;
+  padding: 3.264812575574365%;
   border: 1px solid $base-color;
   @include vendor-prefix(border-radius, 50%);
 
@@ -93,6 +169,14 @@ html {
     order: 2;
     width: 45%;
   }
+
+  @include media(map-deep-get($devices, "desktop")) {
+    grid-column-start: col-1-start;
+    grid-column-end: col-gap;
+    grid-row-start: row-1-end;
+    grid-row-end: row-2-end;
+    width: 100%;
+  }
 }
 
 .column-2 {
@@ -101,5 +185,13 @@ html {
   @include media(map-deep-get($devices, "tablet")) {
     order: 3;
     width: 45%;
+  }
+
+  @include media(map-deep-get($devices, "desktop")) {
+    grid-column-start: col-gap;
+    grid-column-end: col-2-end;
+    grid-row-start: row-1-start;
+    grid-row-end: row-2-end;
+    width: 100%;
   }
 }

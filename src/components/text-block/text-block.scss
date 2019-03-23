@@ -1,0 +1,35 @@
+.block-text-content {
+  width: 100.6%;
+  @include reset-pad-marg();
+  color: $text-color;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.17;
+
+  @include media(map-deep-get($devices, "tablet")) {
+    $min_font_size: 14px;
+    $max_font_size: 17px;
+
+    @include fluid-type(map-deep-get($devices, "tablet"), map-deep-get($devices, "desktop"), $min_font_size, $max_font_size);
+  }
+
+  @include media(map-deep-get($devices, "desktop")) {
+    $min_font_size: 17px;
+    $max_font_size: 20px;
+
+    @include fluid-type(map-deep-get($devices, "desktop"), map-deep-get($devices, "desktop-l"), $min_font_size, $max_font_size);
+  }
+
+  @include media(map-deep-get($devices, "desktop-l")) {
+    $min_font_size: 20px;
+    $max_font_size: 31px;
+
+    @include fluid-type(map-deep-get($devices, "desktop-l"), 2480px, $min_font_size, $max_font_size);
+  }
+
+  &__bold-text {
+    font-family: "MyriadPro Bold", sans-serif;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+}

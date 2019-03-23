@@ -1,0 +1,109 @@
+.simplified-list {
+  width: 75%;
+  @include reset-pad-marg();
+  margin: 0 auto;
+  list-style-type: none;
+
+  @include media(map-deep-get($devices, "tablet")) {
+    width: 100%;
+  }
+
+  @include media(map-deep-get($devices, "desktop")) {
+    width: 100%;
+  }
+
+  @include media(map-deep-get($devices, "desktop")) {
+    padding-top: 30px;
+  }
+
+  &__list-item {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media(map-deep-get($devices, "tablet")) {
+      margin-bottom: 30px;
+    }
+
+    @include media(map-deep-get($devices, "desktop")) {
+      margin-bottom: 40px;
+    }
+
+    @include media(map-deep-get($devices, "desktop-l")) {
+      margin-bottom: 63px;
+    }
+  }
+}
+
+.list-item-block {
+  position: relative;
+
+  &__list-item-key {
+    $min_font_size: 16px;
+    $max_font_size: 18px;
+
+    font-family: "MyriadPro Bold", sans-serif;
+    @include fluid-type(map-deep-get($devices, "mobile-s"), map-deep-get($devices, "tablet"), $min_font_size, $max_font_size);
+    color: $base-color;
+    text-transform: uppercase;
+    font-style: normal;
+
+
+
+    @include media(map-deep-get($devices, "tablet")) {
+      $min_font_size: 18px;
+      $max_font_size: 23px;
+
+      @include fluid-type(map-deep-get($devices, "tablet"), map-deep-get($devices, "desktop"), $min_font_size, $max_font_size);
+    }
+
+    @include media(map-deep-get($devices, "desktop")) {
+      $min_font_size: 23px;
+      $max_font_size: 32px;
+
+      @include fluid-type(map-deep-get($devices, "desktop"), map-deep-get($devices, "desktop-l"), $min_font_size, $max_font_size);
+    }
+
+    @include media(map-deep-get($devices, "desktop-l")) {
+      $min_font_size: 32px;
+      $max_font_size: 41px;
+
+      @include fluid-type(map-deep-get($devices, "desktop-l"), 2048px, $min_font_size, $max_font_size);
+    }
+  }
+
+  &__list-item-text {
+    $min_font_size: 16px;
+    $max_font_size: 18px;
+
+    position: absolute;
+    top: 0;
+    left: 35%;
+    @include fluid-type(map-deep-get($devices, "mobile-s"), map-deep-get($devices, "tablet"), $min_font_size, $max_font_size);
+
+    @include media(map-deep-get($devices, "tablet")) {
+      $min_font_size: 18px;
+      $max_font_size: 23px;
+
+      left: 31%;
+      @include fluid-type(map-deep-get($devices, "tablet"), map-deep-get($devices, "desktop"), $min_font_size, $max_font_size);
+    }
+
+    @include media(map-deep-get($devices, "desktop")) {
+      $min_font_size: 23px;
+      $max_font_size: 32px;
+
+      @include fluid-type(map-deep-get($devices, "desktop"), map-deep-get($devices, "desktop-l"), $min_font_size, $max_font_size);
+    }
+
+
+    @include media(map-deep-get($devices, "desktop-l")) {
+      $min_font_size: 32px;
+      $max_font_size: 41px;
+
+      @include fluid-type(map-deep-get($devices, "desktop-l"), 2048px, $min_font_size, $max_font_size);
+    }
+  }
+}

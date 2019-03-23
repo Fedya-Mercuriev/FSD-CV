@@ -1,9 +1,9 @@
 include ./components/block-wrapper/block-wrapper
 include ./components/text-block/text-block
-include ./components/lists/regular-list/regular-list
+include components/lists/simplified-list/simplified-list
 include ./components/lists/advanced-list/advanced-list
 include ./components/progress-bars/dotted-bar/dotted-bar
-include ./components/progress-bars/solid-bar/solid-progress-bar
+include components/progress-bars/solid-bar/solid-bar
 
 doctype html
 html(lang="en")
@@ -11,7 +11,7 @@ html(lang="en")
         meta(charset="utf-8")
         title="CV"
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        //- link(rel="stylesheet" type="text/css" href="dist/common.css")
+        link(rel="stylesheet" type="text/css" href="dist/common.css")
     body
         div.container
             header.page-header
@@ -26,7 +26,7 @@ html(lang="en")
                     +set-block("icon")
                         include ./img/profile-icon.svg
                     +set-block("component")
-                        +text-block("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu", "pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.")
+                        +text-block("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim <wbr> justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu", "pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.")
 
 
                 // Contacts block
@@ -36,7 +36,7 @@ html(lang="en")
                     +set-block("component")
                         +simplified-list([{
                             key: "address",
-                            text: "Main Street, City"
+                            text: "Main Street, City."
                         }, {
                             key: "e-mail",
                             text: "contact@domain.com"
@@ -69,25 +69,25 @@ html(lang="en")
                     +set-block("component")
                         +advanced-list([
                             {
-                                title: "Master-degree",
+                                title: "Master degree",
                                 date: "Feb 2011 - Jun 2014",
                                 university: "University Name",
                                 text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
                             },
                             {
-                                title: "Master-degree",
+                                title: "Master degree",
                                 date: "Feb 2011 - Jun 2014",
                                 university: "University Name",
                                 text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
                             },
                             {
-                                title: "Master-degree",
+                                title: "Master degree",
                                 date: "Feb 2011 - Jun 2014",
                                 university: "University Name",
                                 text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
                             },
                             {
-                                title: "Master-degree",
+                                title: "Master degree",
                                 date: "Feb 2011 - Jun 2014",
                                 university: "University Name",
                                 text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
