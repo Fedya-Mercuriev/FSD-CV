@@ -3,7 +3,10 @@
 
 Ссылка на деплой проекта: https://fedya-mercuriev.github.io/FSD-CV/.
 
-####Полезные ссылки
+#### Полезные ссылки
+
 [Трюки с nth-child](https://css-tricks.com/useful-nth-child-recipies/);
+
 [Миксины для гибкой типографики](https://css-tricks.com/snippets/css/fluid-typography/);
+
 [Множественные слоты для миксинов в Pug](https://codepen.io/anon/pen/RJBPmr?editors=1000);
